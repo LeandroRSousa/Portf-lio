@@ -1,0 +1,299 @@
+:root {
+    --background-light: #ffffff; 
+    --background-dark: #121212; 
+    --text-light: #000000; 
+    --text-dark: #eaeaea; 
+    --header-background-light: linear-gradient(to right, #007bff, #00bcd4);
+    --header-background-dark: rgba(30, 30, 30, 0.9); 
+    --footer-background-light: linear-gradient(to right, #2c3e50, #34495e); 
+    --footer-background-dark: #1e1e1e; 
+    --card-background-light: linear-gradient(to bottom right, #ffffff, #f8f8f8); 
+    --card-background-dark: linear-gradient(to bottom right, #2a2a2a, #333333); 
+    --link-color-light: #1e90ff; 
+    --link-color-dark: #1e90ff; 
+    --button-background-light: #007bff; 
+    --button-background-dark: #333; 
+    --button-text-light: #ffffff; 
+    --button-text-dark: #ffffff; 
+}
+
+/* Modo Claro */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.8s, color 0.3s;
+    
+}
+
+header {
+    position: relative;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    background-image: url('img/Design\ sem\ nome.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Cor do texto */
+    text-align: center;
+}
+
+.header-banner {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para melhor legibilidade */
+    padding: 20px;
+    border-radius: 10px; /* Borda arredondada */
+}
+
+
+    /* Botão de troca de tema com posicionamento fixo */
+    .theme-switcher {
+    display: flex;
+    align-items: center;
+    margin: 20px; /* Ajuste a margem conforme necessário */
+    position: absolute; /* Usa position absoluto para controlar o posicionamento */
+    right: 20px; /* Ajusta a distância do lado direito da página */
+    top: 450px; /* Ajusta a distância do topo da página, pode ser alterado conforme necessário */
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Largura do switch */
+    height: 34px; /* Altura do switch */
+}
+
+input {
+    opacity: 0; /* Esconde o checkbox original */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Cor de fundo do switch */
+    transition: .4s;
+    border-radius: 34px; /* Borda arredondada */
+    display: flex; /* Alinha os ícones dentro do switch */
+    justify-content: space-between; /* Espaça os ícones */
+    align-items: center; /* Alinha verticalmente os ícones */
+    padding: 0 4px; /* Adiciona padding */
+}
+
+.sun-icon, .moon-icon {
+    font-size: 20px; /* Tamanho dos ícones */
+    color: #fff; /* Cor dos ícones */
+    opacity: 0; /* Inicialmente invisíveis */
+    transition: opacity 0.4s; /* Transição para a visibilidade */
+}
+
+/* Efeito azul ao ativar o switch */
+input:checked + .slider {
+    background-color: #11549c; /* Azul quando ativado */
+}
+
+.sun-icon, .moon-icon {
+    font-size: 20px; /* Tamanho dos ícones */
+    color: #fff; /* Cor dos ícones */
+    opacity: 0; /* Inicialmente invisíveis */
+    transition: opacity 0.4s; /* Transição para a visibilidade */
+}
+
+input:checked + .slider .sun-icon {
+    opacity: 0; /* Oculta o ícone do sol no modo escuro */
+}
+
+input:checked + .slider .moon-icon {
+    opacity: 1; /* Exibe o ícone da lua no modo escuro */
+}
+
+input:not(:checked) + .slider .sun-icon {
+    opacity: 1; /* Exibe o ícone do sol no modo claro */
+}
+
+input:not(:checked) + .slider .moon-icon {
+    opacity: 0; /* Oculta o ícone da lua no modo claro */
+}
+
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Tamanho da bolinha */
+    width: 26px; /* Tamanho da bolinha */
+    left: 4px; /* Posição inicial da bolinha */
+    bottom: 4px; /* Margem inferior */
+    background-color: white; /* Cor da bolinha */
+    transition: .4s; /* Transição suave */
+    border-radius: 50%; /* Forma arredondada */
+}
+
+/* Movimento da bolinha para a direita quando ativado */
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move a bolinha para a direita */
+}
+.theme-label {
+    margin-left: 10px; /* Espaçamento entre o switch e a label */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+
+    h2 {
+    font-family: 'Roboto', sans-serif;
+
+    text-transform: uppercase; /* Texto em maiúsculas */
+	}
+
+    .navbar {
+        background-color: var(--link-color-light);
+    }
+
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: var(--text-dark) !important; /* Cor dos links na barra de navegação no modo claro*/
+        transition: color 0.3s ease, transform 0.2s ease; /* Transições para links */
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #66bb6a; /* Cor ao passar o mouse (pode ajustar conforme sua preferência) */
+        transform: scale(1.1); /* Aumenta o tamanho do link ao passar o mouse */
+        
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--footer-background-light);
+        color: var(--text-light);
+        text-align: center;
+        padding: 1rem 0;
+         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra leve */
+    }
+
+    .card {
+        background-color: var(--card-background-light);
+        border: 1px solid #ccc; /* Borda do cartão no modo claro */
+        border-radius: 10px;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+    .card img {
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    a {
+        color: var(--link-color-light); /* Cor do link no modo claro */
+    }
+
+    .btn {
+        background-color: var(--button-background-light); /* Cor do botão no modo claro */
+        color: var(--button-text-light); /* Texto do botão no modo claro */
+    }
+
+    /* Modo Escuro */
+    body.dark-mode {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+        transition: background-color 0.8s, color 0.3s;
+    }
+
+    .dark-mode header {
+        background-color: var(--header-background-dark);
+        color: var(--text-dark);
+    }
+    
+    .dark-mode .navbar-brand,
+    .dark-mode .navbar-nav .nav-link {
+        color: var(--text-dark) !important; /* Cor dos links na barra de navegação no modo escuro*/
+    }
+    
+    .dark-mode footer {
+        background-color: var(--footer-background-dark);
+        color: var(--text-dark);
+    }
+
+    .dark-mode .card {
+        background-color: var(--card-background-dark);
+        border: 1px solid #444; /* Borda do cartão no modo escuro */
+    }
+
+    .dark-mode a {
+        color: var(--link-color-dark); /* Cor do link no modo escuro */
+    }
+
+    .dark-mode .btn {
+        background-color: var(--button-background-dark); /* Cor do botão no modo escuro */
+        color: var(--button-text-dark); /* Texto do botão no modo escuro */
+    }
+    
+    #habilidades {
+        max-width: 600px; /* Largura máxima do contêiner do gráfico */
+        margin: 0 auto;   /* Centraliza o gráfico na tela */
+    }
+
+    .chart-container {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    #skillsChart {
+        width: 100% !important; /* Largura total do contêiner */
+        height: auto !important; /* Altura automática */
+    }
+
+    .skills {
+        margin: 20px 0;
+        color: white;
+    }
+
+    .skill-bar {
+        background: #6A738A; /* Cor da barra de habilidade */
+        border-radius: 5px;
+        margin: 10px 0;
+        overflow: hidden;
+    }
+
+    .skill-fill {
+        background: #2C4EA3; /* Cor do preenchimento da barra de habilidade */
+        height: 20px;
+    }
+    @media (max-width: 768px) {
+    .navbar {
+        display: block; /* Garante que o menu seja exibido */
+    }
+    
+    .navbar-nav {
+        display: flex; /* Exibe os itens do menu em linha */
+        flex-direction: column; /* Em coluna para dispositivos móveis */
+        width: 100%; /* Largura total */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px; /* Adiciona espaçamento aos links */
+    }
+    .theme-switcher {
+    display: flex;
+    align-items: center;
+    margin: 20px; /* Ajuste a margem conforme necessário */
+    position: absolute; /* Usa position absoluto para controlar o posicionamento */
+    right: 20px; /* Ajusta a distância do lado direito da página */
+    top: 390px; /* Ajusta a distância do topo da página, pode ser alterado conforme necessário */
+}
+
+}
