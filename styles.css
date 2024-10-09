@@ -142,7 +142,6 @@ input:checked + .slider:before {
 .theme-label {
     margin-left: 10px; /* Espaçamento entre o switch e a label */
     font-size: 16px; /* Tamanho da fonte */
-    color: white;
 }
 
 
@@ -296,5 +295,9 @@ input:checked + .slider:before {
     right: 20px; /* Ajusta a distância do lado direito da página */
     top: 390px; /* Ajusta a distância do topo da página, pode ser alterado conforme necessário */
 }
-
+.theme-label {
+    margin-left: 10px; /* Espaçamento entre o switch e a label */
+    font-size: 16px; /* Tamanho da fonte */
+    color: white;
+}
 }
